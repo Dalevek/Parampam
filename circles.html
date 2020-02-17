@@ -3,8 +3,27 @@
 <head>
     <title>Parampam</title>
     <script src="paper-full.js"></script>
+    <link rel="stylesheet" href="circles.css">
+    <script type="text/paperscript" canvas="myCanvas">
+        // var myCircle2 = new Path.Circle(new Point(50, 50), 400);
+        // myCircle2.fillColor = 'purple';
+        var circlesGrid = [];
+        var maxWidth = 1000;
+        var maxHeight = 1000;
+        var px = 0;
+        var py = 0;
+        var radius = 10;
+        while(py != 1000) {
+            while(px != 1000) {
+                circlesGrid.push((new Path.Circle(new Point(px, py), radius)).fillColor = 'red');
+                px+=100;
+            }
+            px = 0;
+            py+=100;
+        }
+    </script>
 </head>
 <body>
-    
+    <canvas id="myCanvas" resize></canvas>
 </body>
 </html>
