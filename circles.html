@@ -5,22 +5,20 @@
     <script src="paper-full.js"></script>
     <link rel="stylesheet" href="circles.css">
     <script type="text/paperscript" canvas="myCanvas">
-        // var myCircle2 = new Path.Circle(new Point(50, 50), 400);
-        // myCircle2.fillColor = 'purple';
         var circlesGrid = [];
         var maxWidth = 1000;
         var maxHeight = 1000;
-        var px = 0;
-        var py = 0;
+        var r,g,b = 0;
         var radius = 10;
-        while(py != 1000) {
-            while(px != 1000) {
-                circlesGrid.push((new Path.Circle(new Point(px, py), radius)).fillColor = 'red');
-                px+=100;
+        for(var x = 0; x < maxWidth; x+=100) {
+            for(var y = 0; y < maxHeight; y+=100) {
+                r = 255*x/1000;
+                g = 255*y/1000;
+                b = 255*(x+y)/2000;
+                circlesGrid.push((new Path.Circle(new Point(x, y), radius)).fillColor = "rgb("+r+","+g+","+b+")");
             }
-            px = 0;
-            py+=100;
         }
+
     </script>
 </head>
 <body>
