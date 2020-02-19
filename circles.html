@@ -43,17 +43,17 @@
 
         }
 
-
-        var animateCircle = new Path.Circle(new Point(300,300), 100);
-        animateCircle.fillColor = "red";
-
         function onFrame(event) {
             circles.forEach(function(element, index) {
                 element.fillColor.hue += 1;
                 element.scale(.95);
+                if(element.area < 1){
+                    element.remove(); // remove the circle from the canvas
+                    circles.splice(index, 1); // remove the circle from the array
+                    console.log(circles);
+                }
             })
-            animateCircle.fillColor.hue += 1;
-            animateCircle.scale(.95);
+
         }
         
     </script>
